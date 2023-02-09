@@ -1,0 +1,14 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.mousePos = vmath.vector3()
+	self.objPos =  go.get_position()
+	self.minObjPos = go.get_world_scale()
+	self.maxObjPos = vmath.vector3()
+end
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		self.mousePos.x = action.x
+		self.mousePos.y = action.y
+		print(self.minObjPos)
+	end
+end

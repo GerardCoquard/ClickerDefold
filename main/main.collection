@@ -46,7 +46,6 @@ embedded_instances {
   children: "Component1"
   children: "Component2"
   children: "Component3"
-  children: "Component4"
   data: "components {\n"
   "  id: \"componentScript\"\n"
   "  component: \"/main/scripts/componentScript.script\"\n"
@@ -244,7 +243,24 @@ embedded_instances {
 }
 embedded_instances {
   id: "Component4"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"clickProva\"\n"
+  "  component: \"/main/scripts/clickProva.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/testAtlas.atlas\\\"\\n"
@@ -266,9 +282,9 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
-    y: -153.6
-    z: 0.0
+    x: 507.0
+    y: 108.4
+    z: 1.0
   }
   rotation {
     x: 0.0
