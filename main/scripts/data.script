@@ -1,0 +1,14 @@
+go.property("SpawnRate", 10)
+go.property("SecondsToClick", 3)
+clicks = 0
+function on_message(self, message_id, message, sender)
+	local lastClicks = math.floor(clicks/self.SpawnRate)
+	clicks = clicks + message[1]
+	local currentClicks =  math.floor(clicks/self.SpawnRate)
+	if lastClicks ~= currentClicks then
+		local newClickers = currentClicks - lastClicks
+		print("Spawn " .. newClickers .. " new sprites")
+	end
+	local pieAngle = (clicks/self.SpawnRate)%1*360
+	msg.post("/ui#hud", "",{clicks,pieAngle})
+end
