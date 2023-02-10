@@ -1,0 +1,23 @@
+
+
+function init(self)
+	clicks = 0
+	nextSpawn = 10
+	textNode = gui.get_node("text")
+	pieNode = gui.get_node("pie")
+	gui.set_fill_angle(pieNode, 0)
+	gui.set_text(textNode, "Clicks: " .. clicks)
+end
+
+function on_message(self, message_id, message, sender)
+	local lastClicks = math.floor(clicks/nextSpawn)
+	clicks = clicks + message[1]
+	local currentClicks =  math.floor(clicks/nextSpawn)
+	if lastClicks ~= currentClicks then
+		local newClickers = currentClicks - lastClicks
+		print("Spawn " .. newClickers .. " new sprites")
+	end
+	local pieAngle = (clicks/nextSpawn)%1*360
+	gui.set_fill_angle(pieNode, pieAngle)
+	gui.set_text(textNode, "Clicks: " .. clicks)
+end
