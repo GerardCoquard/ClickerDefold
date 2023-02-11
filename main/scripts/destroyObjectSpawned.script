@@ -1,5 +1,5 @@
 function init(self)
-	self.t = 2 -- <1>
+	self.t = 15 -- <1>
 end
 
 function update(self, dt)
