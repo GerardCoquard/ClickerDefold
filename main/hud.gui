@@ -1,7 +1,7 @@
 script: "/main/scripts/hud.gui_script"
 fonts {
   name: "system_font"
-  font: "/builtins/fonts/system_font.font"
+  font: "/main/TheFont.font"
 }
 textures {
   name: "testAtlas"
