@@ -5,10 +5,10 @@ function init(self)
 	pieNode = gui.get_node("pie")
 	textNode = gui.get_node("text")
 	gui.set_fill_angle(pieNode, 0)
-	gui.set_text(textNode, "Clicks: " .. clicks)
+	gui.set_text(textNode, "Space Debris: " .. clicks)
 end
 
 function on_message(self, message_id, message, sender)
 	gui.set_fill_angle(pieNode, message[2])
-	gui.set_text(textNode, "Clicks: " .. message[1])
+	gui.set_text(textNode, "Space Debris: " .. message[1])
 end

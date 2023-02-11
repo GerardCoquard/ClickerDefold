@@ -46,7 +46,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Clicks:"
+  text: "Space Debris:"
   font: "system_font"
   id: "text"
   xanchor: XANCHOR_NONE
