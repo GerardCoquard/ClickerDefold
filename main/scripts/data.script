@@ -2,6 +2,10 @@ go.property("SpawnRate", 10)
 go.property("SecondsToClick", 3)
 go.property("ClicksOnTouch", 1)
 clicks = 0
+widthX, heightY = window.get_size()
+
+function init(self)
+end
 function on_message(self, message_id, message, sender)
 	local lastClicks = math.floor(clicks/self.SpawnRate)
 	clicks = clicks + message[1]
@@ -9,6 +13,8 @@ function on_message(self, message_id, message, sender)
 	if lastClicks ~= currentClicks then
 		local newClickers = currentClicks - lastClicks
 		print("Spawn " .. newClickers .. " new sprites")
+		local pos = vmath.vector3(math.random(50,widthX - 50),math.random(50,heightY-50),1)
+		local carrot_id = factory.create("#factory", pos)
 	end
 	local pieAngle = (clicks/self.SpawnRate)%1*360
 	msg.post("/ui#hud", "",{clicks,pieAngle})

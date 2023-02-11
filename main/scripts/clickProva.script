@@ -2,6 +2,7 @@
 local width = 204.8
 local height = 204.8
 local clicksTouch
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	clicksTouch = go.get("/controller#data", "ClicksOnTouch")

@@ -1,0 +1,10 @@
+function init(self)
+	self.t = 2 -- <1>
+end
+
+function update(self, dt)
+	self.t = self.t - dt -- <2>
+	if self.t < 0 then
+		go.delete() -- <3>
+	end
+end
