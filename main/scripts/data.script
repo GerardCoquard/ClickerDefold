@@ -3,8 +3,6 @@ go.property("ClicksOnTouch", 1)
 clicks = 0
 widthX, heightY = window.get_size()
 
-function init(self)
-end
 function on_message(self, message_id, message, sender)
 	local lastClicks = math.floor(clicks/self.SpawnRate)
 	clicks = clicks + message[1]
