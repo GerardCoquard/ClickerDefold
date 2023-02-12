@@ -1,0 +1,14 @@
+go.property("ClickGive", 2)
+go.property("TimePerAction", 3)
+
+function init(self)
+	self.t = 15 -- <1>
+end
+
+function update(self, dt)
+	self.TimePerAction = self.TimePerAction - dt -- <2>
+	if self.TimePerAction < 0 then
+		self.TimePerAction = 3
+		msg.post("/controller#data", "",{self.TimePerAction})
+	end
+end

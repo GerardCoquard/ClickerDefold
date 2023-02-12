@@ -1,6 +1,6 @@
 components {
   id: "destroyObjectSpawned"
-  component: "/main/scripts/destroyObjectSpawned.script"
+  component: "/main/scripts/giveClicks.script"
   position {
     x: 0.0
     y: 0.0
