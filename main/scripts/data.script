@@ -1,5 +1,4 @@
 go.property("SpawnRate", 10)
-go.property("SecondsToClick", 3)
 go.property("ClicksOnTouch", 1)
 clicks = 0
 widthX, heightY = window.get_size()
