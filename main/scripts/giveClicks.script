@@ -1,16 +1,12 @@
 go.property("ClickGive", 1)
 go.property("TimePerAction", 3)
-local currentTime
 
-function init(self)
-	currentTime = 0
-end
 function update(self, dt)
-	currentTime = currentTime + dt
-	print(currentTime)
-	if currentTime > self.TimePerAction then
-		currentTime = 0
+	self.TimePerAction = self.TimePerAction - dt -- <2>
+	if self.TimePerAction < 0 then
+		self.TimePerAction = 3
 		msg.post("/controller#data", "",{self.ClickGive})
 		go.animate(".", "scale", go.PLAYBACK_ONCE_PINGPONG, 2 ,go.EASING_OUTBOUNCE, 0.3)
+		sound.play("#sound")
 	end
 end

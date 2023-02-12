@@ -1,0 +1,22 @@
+
+local width = 178.8
+local height = 182.8
+local clicksTouch
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	clicksTouch = go.get("/controller#data", "ClicksOnTouch")
+	go.animate("/notes#sprite", "scale", go.PLAYBACK_LOOP_PINGPONG, 0.2, go.EASING_OUTELASTIC, 0.8)
+	sound.play("/Background#sound")
+end
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		if action.x <= go.get_position().x + width/2 and action.x >= go.get_position().x - width/2 then
+			if action.y <= go.get_position().y + height/2 and action.y >= go.get_position().y - height/2 then
+				msg.post("/controller#data", "",{clicksTouch})
+				sprite.play_flipbook("/Phantom#sprite", "playGuitar")
+				sound.play("/Phantom#sound")
+			end
+		end
+	end
+end

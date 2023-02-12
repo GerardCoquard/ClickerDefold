@@ -1,14 +1,15 @@
 
 local pieNode
 local textNode
+local notesNode
 function init(self)
 	pieNode = gui.get_node("pie")
 	textNode = gui.get_node("text")
 	gui.set_fill_angle(pieNode, 0)
-	gui.set_text(textNode, "Notes: " .. clicks)
+	gui.set_text(textNode, "Chords: " .. clicks)
 end
 
 function on_message(self, message_id, message, sender)
 	gui.set_fill_angle(pieNode, message[2])
-	gui.set_text(textNode, "Notes: " .. message[1])
+	gui.set_text(textNode, "Chords: " .. message[1])
 end

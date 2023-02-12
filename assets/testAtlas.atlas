@@ -1,21 +1,13 @@
 images {
-  image: "/assets/box.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/backgroundspace.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/SpaceDebris.PNG"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/assets/clicker/Nota1.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
   image: "/assets/clicker/notitas.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/clicker/FOND.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {

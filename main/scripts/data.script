@@ -11,7 +11,6 @@ function on_message(self, message_id, message, sender)
 	local currentClicks =  math.floor(clicks/self.SpawnRate)
 	if lastClicks ~= currentClicks then
 		local newClickers = currentClicks - lastClicks
-		print("Spawn " .. newClickers .. " new sprites")
 		for i= 1,newClickers do
 			local pos = vmath.vector3(math.random(50,widthX - 50),math.random(50,heightY-50),1)
 			local carrot_id = factory.create("#factory", pos)
